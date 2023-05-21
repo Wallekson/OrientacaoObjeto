@@ -1,6 +1,6 @@
 package aplication;
 
-import entities.EmployeeSalary;
+import entities.Employee;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -12,21 +12,24 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        EmployeeSalary employeeSalary = new EmployeeSalary();
+        Employee emp = new Employee();
         System.out.print("Name: ");
-        employeeSalary.name = sc.nextLine();
+        emp.name = sc.nextLine();
         System.out.print("Gross Salary: ");
-        employeeSalary.grossSalary = sc.nextDouble();
+        emp.grossSalary = sc.nextDouble();
         System.out.print("Tax: ");
-        employeeSalary.tax = sc.nextDouble();
+        emp.tax = sc.nextDouble();
 
-        System.out.printf("Employee and salary: " + employeeSalary.name + ", $ %.2f", employeeSalary.IncreaseSalary());
+        System.out.println();
+        System.out.println("Employee: " + emp);
+        System.out.println();
+        System.out.print("Which percentage to increase salary? ");
+        double percentage = sc.nextDouble();
+        emp.IncreaseSalary(percentage);
 
-        System.out.printf("%nPercenter: ");
-        double percenter = sc.nextDouble();
-        employeeSalary.AddPercenter(percenter);
+        System.out.println("Update data: " + emp);
 
-        System.out.printf("Employee e new salary: " + employeeSalary.name + ", $ %.2f", employeeSalary.NewSalary());
+        sc.close();
 
 
 
